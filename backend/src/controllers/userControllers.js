@@ -152,7 +152,7 @@ export const updateUser = async (req, res) => {
 };
 
 //@desc     get nearby users
-//@route    POST /user/nearby-users
+//@route    GET /user/nearby-users
 //@access   protected
 export const getNearbyUsers = async (req, res) => {
   try {
@@ -162,8 +162,10 @@ export const getNearbyUsers = async (req, res) => {
         $geoNear: {
           near: {
             type: 'Point',
+            coordinates: [currentUser.lang, currentUser.lat],
           },
           distanceField: 'distance',
+          maxDistance: 5000,
           spherical: true,
           query: { _id: { $ne: currentUser._id } },
         },
