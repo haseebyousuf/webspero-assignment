@@ -50,7 +50,9 @@ const UserSchema = mongoose.Schema({
     coordinates: { type: [Number], required: true },
   },
 });
+
 UserSchema.index({ location: '2dsphere' });
+
 UserSchema.methods.createHash = async function (password) {
   const saltRounds = 10;
   const salt = await bcrypt.genSalt(saltRounds);
