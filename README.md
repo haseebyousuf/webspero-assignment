@@ -2,7 +2,7 @@
 
 ## DEMO
 
-![Video Demo](./frontend/src/assets/demo.gif)
+![Video Demo](./frontend/src/assets/demo-video.gif)
 
 ## This project uses the following technologies
 
